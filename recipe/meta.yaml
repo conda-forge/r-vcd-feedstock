@@ -1,5 +1,4 @@
 {% set version = '1.4-4' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,19 +9,22 @@ package:
 source:
   fn: vcd_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/vcd_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/vcd/vcd_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/vcd_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/vcd/vcd_{{ version }}.tar.gz
   sha256: a561adf120b5ce41b66e0c0c321542fcddc772eb12b3d7020d86e9cd014ce9d2
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
+  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
-  skip: True  # [win32]
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-mass
     - r-colorspace
@@ -35,7 +37,7 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('vcd')"  # [not win]
+    - $R -e "library('vcd')"           # [not win]
     - "\"%R%\" -e \"library('vcd')\""  # [win]
 
 about:
@@ -52,8 +54,9 @@ about:
 
 extra:
   recipe-maintainers:
-    - cbrueffer
     - johanneskoester
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
