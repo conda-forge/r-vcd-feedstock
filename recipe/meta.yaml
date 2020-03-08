@@ -1,4 +1,4 @@
-{% set version = "1.4-5" %}
+{% set version = "1.4-6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,11 +11,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/vcd_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/vcd/vcd_{{ version }}.tar.gz
-  sha256: 2a08064a6b0319bbb0442202bf0448a75ce6bef03088731856c034709b0e0e5f
+  sha256: 7f804081a722e98885c4bc8b57be67486ffa3dcb681a5ea3b2dcd0e26f225f66
 
 build:
   noarch: generic
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -43,13 +43,11 @@ test:
 about:
   home: https://CRAN.R-project.org/package=vcd
   license: GPL-2
-  summary: Visualization techniques, data sets, summary and inference procedures aimed particularly
-    at categorical data. Special emphasis is given to highly extensible grid graphics.
-    The package was package was originally inspired by the book  "Visualizing Categorical
-    Data" by Michael Friendly and is  now the main support package for a new book,  "Discrete
-    Data Analysis with R" by Michael Friendly and  David Meyer (2015).
+  summary: Visualization techniques, data sets, summary and inference procedures aimed particularly at categorical data. Special emphasis is given to highly extensible
+    grid graphics. The package was package was originally inspired by the book  "Visualizing Categorical Data" by Michael Friendly and is  now the main support package
+    for a new book,  "Discrete Data Analysis with R" by Michael Friendly and  David Meyer (2015).
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
