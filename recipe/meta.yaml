@@ -1,4 +1,4 @@
-{% set version = "1.4-6" %}
+{% set version = "1.4-7" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/vcd_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/vcd/vcd_{{ version }}.tar.gz
-  sha256: 7f804081a722e98885c4bc8b57be67486ffa3dcb681a5ea3b2dcd0e26f225f66
+  sha256: ec89b2ad202b89d70344b49d9410ddc8a15dced00462ed7e6f9b516811325299
 
 build:
   noarch: generic
