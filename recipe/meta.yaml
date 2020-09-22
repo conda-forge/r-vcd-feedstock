@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: vcd_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/vcd_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/vcd/vcd_{{ version }}.tar.gz
   sha256: 236fcb183152f6e9d131eeb3931d5a064a5ff79be91e4533df9148fd2ff41e0c
 
 build:
-  noarch: generic
   merge_build_host: true  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -42,11 +41,12 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=vcd
-  license: GPL-2
+  license: GPL-2.0-only
   summary: Visualization techniques, data sets, summary and inference procedures aimed particularly at categorical data. Special emphasis is given to highly extensible grid graphics. The package was package was originally inspired by the book  "Visualizing Categorical Data" by Michael Friendly and is  now the main support
     package for a new book,  "Discrete Data Analysis with R" by Michael Friendly and  David Meyer (2015).
   license_family: GPL2
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
