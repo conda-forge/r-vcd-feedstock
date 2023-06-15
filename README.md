@@ -1,11 +1,11 @@
-About r-vcd
-===========
+About r-vcd-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-vcd-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=vcd
 
 Package license: GPL-2.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-vcd-feedstock/blob/main/LICENSE.txt)
 
 Summary: Visualization techniques, data sets, summary and inference procedures aimed particularly at categorical data. Special emphasis is given to highly extensible grid graphics. The package was package was originally inspired by the book  "Visualizing Categorical Data" by Michael Friendly and is  now the main support package for a new book,  "Discrete Data Analysis with R" by Michael Friendly and  David Meyer (2015).
 
