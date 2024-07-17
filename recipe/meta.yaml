@@ -1,6 +1,5 @@
 {% set version = "1.4-12" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-vcd
@@ -13,8 +12,7 @@ source:
   sha256: c931ef115529931cddb1d5caec4d4d3569ebf12aadde719b2f5019812c9ded88
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   noarch: generic
   rpaths:
     - lib/R/lib/
