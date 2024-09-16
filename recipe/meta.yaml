@@ -1,4 +1,4 @@
-{% set version = "1.4-12" %}
+{% set version = "1.4-13" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/vcd_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/vcd/vcd_{{ version }}.tar.gz
-  sha256: c931ef115529931cddb1d5caec4d4d3569ebf12aadde719b2f5019812c9ded88
+  sha256: 9dac62ace393ef6e56a1f5fa8909081350d2f9f46e47ea6f78759d41a81df8cc
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
